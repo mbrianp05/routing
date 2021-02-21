@@ -12,5 +12,10 @@
     "minimum-stability": "stable",
     "require": {
         "mbrianp/http": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mbrianp\\FuncCollection\\Routing\\": "lib/Mbrianp/Routing"
+        }
     }
 }
