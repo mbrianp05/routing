@@ -1,0 +1,16 @@
+{
+    "name": "mbrianp/routing",
+    "description": "A routing component",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian",
+            "email": "mbrianp05@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "mbrianp/http": "*"
+    }
+}
