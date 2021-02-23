@@ -70,7 +70,7 @@ class Router
         foreach ($route->parameters as $parameter_name => $parameter_value) {
             $requirement = $route->requirements[$parameter_name] ?? null;
 
-            if (null === $requirement) {
+            if (null === $requirement || empty($requirement)) {
                 continue;
             }
 
@@ -92,6 +92,10 @@ class Router
         }
 
         foreach ($this->routes as $route) {
+            if ('/' == $route->path) {
+                $path .= '/';
+            }
+
             if (\in_array($request->method, $route->methods) && preg_match($this->toMatchExpression($route), $path, $parameters)) {
                 $parameters = $this->resolveParameters($parameters);
                 $route->parameters = $parameters;
