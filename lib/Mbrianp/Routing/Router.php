@@ -94,6 +94,8 @@ class Router
         foreach ($this->routes as $route) {
             if ('/' == $route->path) {
                 $path .= '/';
+            } else {
+                $path = $request->path;
             }
 
             if (\in_array($request->method, $route->methods) && preg_match($this->toMatchExpression($route), $path, $parameters)) {
